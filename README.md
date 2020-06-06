@@ -2,7 +2,7 @@
 
 [Managing infrastructure as code with Terraform, Cloud Build, and GitOps](https://cloud.google.com/solutions/managing-infrastructure-as-code).
 
-## Configuring your **dev** environment
+## **dev** environment
 
 Just for demostration, this step will:
 
@@ -17,17 +17,4 @@ terraform apply
 terraform destroy
 ```
 
-## Promoting your environment to **production**
-
-Once you have tested your app (in this example an apache2 http server), you can promote your configuration to prodution. This step will:
-
- 1. Configure an apache2 http server on network '**prod**' and subnet '**prod**-subnet-01'
- 2. Open port 80 on firewall for this http server
-
-```bash
-cd ../prod
-terraform init
-terraform plan
-terraform apply
-terraform destroy
-```
+For sake of simplicity, our dev environment acts as the single environment.
