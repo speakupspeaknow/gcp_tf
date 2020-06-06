@@ -38,3 +38,12 @@ module "firewall" {
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
 }
+
+resource "google_storage_bucket" "static-site" {
+  name          = "www.speakupspeaknow.org"
+  location      = "US"
+  force_destroy = true
+
+  storage_class = "STANDARD"
+  bucket_policy_only = true
+}
