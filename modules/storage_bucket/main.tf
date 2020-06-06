@@ -12,23 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+resource "google_storage_bucket" "static-site" {
+  project       = "${var.project}"
+  name          = "www.speakupspeaknow.org"
+  location      = "US"
+  force_destroy = true
 
-output "network" {
-  value = "${module.vpc.network}"
-}
-
-output "subnet" {
-  value = "${module.vpc.subnet}"
-}
-
-output "firewall_rule" {
-  value = "${module.firewall.firewall_rule}"
-}
-
-output "instance_name" {
-  value = "${module.http_server.instance_name}"
-}
-
-output "external_ip" {
-  value = "${module.http_server.external_ip}"
+  storage_class      = "STANDARD"
+  bucket_policy_only = true
 }

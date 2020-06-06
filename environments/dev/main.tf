@@ -38,3 +38,8 @@ module "firewall" {
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
 }
+
+module "storage_bucket" {
+  source = "../../modules/storage_bucket"
+  project = "${var.project}"
+}
