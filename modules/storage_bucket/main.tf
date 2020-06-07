@@ -20,4 +20,8 @@ resource "google_storage_bucket" "static-site" {
 
   storage_class      = "STANDARD"
   bucket_policy_only = true
+
+  website {
+    main_page_suffix = "index.html"
+  }
 }
